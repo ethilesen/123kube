@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: example-service
+  namespace: ffi
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30523 
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  sessionAffinity: None
+  type: NodePort

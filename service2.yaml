@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: 2018-11-19T19:00:40Z
+  name: example-service
+  namespace: ffi
+  resourceVersion: "4767209"
+  selfLink: /api/v1/namespaces/ffi/services/example-service
+  uid: 68a6f34d-ec2d-11e8-bec9-060ff096b1b9
+spec:
+  clusterIP: 10.0.0.147
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30523
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: nginx
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
